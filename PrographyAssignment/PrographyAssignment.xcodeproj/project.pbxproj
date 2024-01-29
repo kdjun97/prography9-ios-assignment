@@ -14,6 +14,7 @@
 		B77C1B782B67B9CA004CA151 /* PrographyAssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1B772B67B9CA004CA151 /* PrographyAssignmentTests.swift */; };
 		B77C1B822B67B9CA004CA151 /* PrographyAssignmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1B812B67B9CA004CA151 /* PrographyAssignmentUITests.swift */; };
 		B77C1B842B67B9CA004CA151 /* PrographyAssignmentUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1B832B67B9CA004CA151 /* PrographyAssignmentUITestsLaunchTests.swift */; };
+		B77C1B932B67C3FF004CA151 /* PNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1B922B67C3FF004CA151 /* PNavigationBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		B77C1B7D2B67B9CA004CA151 /* PrographyAssignmentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrographyAssignmentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B77C1B812B67B9CA004CA151 /* PrographyAssignmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrographyAssignmentUITests.swift; sourceTree = "<group>"; };
 		B77C1B832B67B9CA004CA151 /* PrographyAssignmentUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrographyAssignmentUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B77C1B922B67C3FF004CA151 /* PNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNavigationBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 		B77C1B652B67B9C9004CA151 /* PrographyAssignment */ = {
 			isa = PBXGroup;
 			children = (
+				B77C1B902B67C368004CA151 /* DesignSystem */,
 				B77C1B662B67B9C9004CA151 /* PrographyAssignmentApp.swift */,
 				B77C1B682B67B9C9004CA151 /* ContentView.swift */,
 				B77C1B6A2B67B9CA004CA151 /* Assets.xcassets */,
@@ -125,6 +128,22 @@
 				B77C1B832B67B9CA004CA151 /* PrographyAssignmentUITestsLaunchTests.swift */,
 			);
 			path = PrographyAssignmentUITests;
+			sourceTree = "<group>";
+		};
+		B77C1B902B67C368004CA151 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				B77C1B912B67C3F2004CA151 /* NavigationBar */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		B77C1B912B67C3F2004CA151 /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				B77C1B922B67C3FF004CA151 /* PNavigationBar.swift */,
+			);
+			path = NavigationBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B77C1B692B67B9C9004CA151 /* ContentView.swift in Sources */,
+				B77C1B932B67C3FF004CA151 /* PNavigationBar.swift in Sources */,
 				B77C1B672B67B9C9004CA151 /* PrographyAssignmentApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
