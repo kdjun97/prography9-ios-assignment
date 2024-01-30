@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct PrographyAssignmentApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView(store: Store(initialState: RootFeature.State()) {
+                RootFeature()._printChanges()
+            })
         }
     }
 }
