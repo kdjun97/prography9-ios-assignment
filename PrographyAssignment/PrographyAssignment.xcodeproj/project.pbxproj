@@ -8,13 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		B77C1B672B67B9C9004CA151 /* PrographyAssignmentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1B662B67B9C9004CA151 /* PrographyAssignmentApp.swift */; };
-		B77C1B692B67B9C9004CA151 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1B682B67B9C9004CA151 /* ContentView.swift */; };
 		B77C1B6B2B67B9CA004CA151 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B77C1B6A2B67B9CA004CA151 /* Assets.xcassets */; };
 		B77C1B6E2B67B9CA004CA151 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B77C1B6D2B67B9CA004CA151 /* Preview Assets.xcassets */; };
 		B77C1B782B67B9CA004CA151 /* PrographyAssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1B772B67B9CA004CA151 /* PrographyAssignmentTests.swift */; };
 		B77C1B822B67B9CA004CA151 /* PrographyAssignmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1B812B67B9CA004CA151 /* PrographyAssignmentUITests.swift */; };
 		B77C1B842B67B9CA004CA151 /* PrographyAssignmentUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1B832B67B9CA004CA151 /* PrographyAssignmentUITestsLaunchTests.swift */; };
 		B77C1B932B67C3FF004CA151 /* PNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1B922B67C3FF004CA151 /* PNavigationBar.swift */; };
+		B77C1B972B67D417004CA151 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1B962B67D417004CA151 /* RootView.swift */; };
+		B77C1B992B67D41E004CA151 /* RootFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1B982B67D41E004CA151 /* RootFeature.swift */; };
+		B77C1B9C2B67D433004CA151 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = B77C1B9B2B67D433004CA151 /* ComposableArchitecture */; };
+		B77C1BA12B67D87C004CA151 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1BA02B67D87C004CA151 /* MainView.swift */; };
+		B77C1BA32B67D881004CA151 /* MainFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1BA22B67D881004CA151 /* MainFeature.swift */; };
+		B77C1BA52B67D88E004CA151 /* RandomPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1BA42B67D88E004CA151 /* RandomPhotoView.swift */; };
+		B77C1BA72B67D895004CA151 /* RandomPhotoFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1BA62B67D895004CA151 /* RandomPhotoFeature.swift */; };
+		B77C1BAA2B67FB05004CA151 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1BA92B67FB05004CA151 /* DetailView.swift */; };
+		B77C1BAC2B67FB0A004CA151 /* DetailFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1BAB2B67FB0A004CA151 /* DetailFeature.swift */; };
+		B77C1BB42B6914F5004CA151 /* TransparentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1BB32B6914F5004CA151 /* TransparentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +46,6 @@
 /* Begin PBXFileReference section */
 		B77C1B632B67B9C9004CA151 /* PrographyAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrographyAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B77C1B662B67B9C9004CA151 /* PrographyAssignmentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrographyAssignmentApp.swift; sourceTree = "<group>"; };
-		B77C1B682B67B9C9004CA151 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B77C1B6A2B67B9CA004CA151 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B77C1B6D2B67B9CA004CA151 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B77C1B732B67B9CA004CA151 /* PrographyAssignmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrographyAssignmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +54,15 @@
 		B77C1B812B67B9CA004CA151 /* PrographyAssignmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrographyAssignmentUITests.swift; sourceTree = "<group>"; };
 		B77C1B832B67B9CA004CA151 /* PrographyAssignmentUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrographyAssignmentUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B77C1B922B67C3FF004CA151 /* PNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNavigationBar.swift; sourceTree = "<group>"; };
+		B77C1B962B67D417004CA151 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		B77C1B982B67D41E004CA151 /* RootFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootFeature.swift; sourceTree = "<group>"; };
+		B77C1BA02B67D87C004CA151 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		B77C1BA22B67D881004CA151 /* MainFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeature.swift; sourceTree = "<group>"; };
+		B77C1BA42B67D88E004CA151 /* RandomPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPhotoView.swift; sourceTree = "<group>"; };
+		B77C1BA62B67D895004CA151 /* RandomPhotoFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPhotoFeature.swift; sourceTree = "<group>"; };
+		B77C1BA92B67FB05004CA151 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		B77C1BAB2B67FB0A004CA151 /* DetailFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFeature.swift; sourceTree = "<group>"; };
+		B77C1BB32B6914F5004CA151 /* TransparentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B77C1B9C2B67D433004CA151 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,9 +114,9 @@
 		B77C1B652B67B9C9004CA151 /* PrographyAssignment */ = {
 			isa = PBXGroup;
 			children = (
+				B77C1B9E2B67D83C004CA151 /* Feature */,
+				B77C1B942B67D3F3004CA151 /* App */,
 				B77C1B902B67C368004CA151 /* DesignSystem */,
-				B77C1B662B67B9C9004CA151 /* PrographyAssignmentApp.swift */,
-				B77C1B682B67B9C9004CA151 /* ContentView.swift */,
 				B77C1B6A2B67B9CA004CA151 /* Assets.xcassets */,
 				B77C1B6C2B67B9CA004CA151 /* Preview Content */,
 			);
@@ -133,6 +151,7 @@
 		B77C1B902B67C368004CA151 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
+				B77C1BB22B6914BB004CA151 /* View */,
 				B77C1B912B67C3F2004CA151 /* NavigationBar */,
 			);
 			path = DesignSystem;
@@ -144,6 +163,69 @@
 				B77C1B922B67C3FF004CA151 /* PNavigationBar.swift */,
 			);
 			path = NavigationBar;
+			sourceTree = "<group>";
+		};
+		B77C1B942B67D3F3004CA151 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				B77C1B662B67B9C9004CA151 /* PrographyAssignmentApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		B77C1B952B67D3F7004CA151 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				B77C1B962B67D417004CA151 /* RootView.swift */,
+				B77C1B982B67D41E004CA151 /* RootFeature.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		B77C1B9D2B67D826004CA151 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				B77C1BA02B67D87C004CA151 /* MainView.swift */,
+				B77C1BA22B67D881004CA151 /* MainFeature.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		B77C1B9E2B67D83C004CA151 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				B77C1BA82B67FAFA004CA151 /* Detail */,
+				B77C1B9F2B67D871004CA151 /* RandomPhoto */,
+				B77C1B952B67D3F7004CA151 /* Root */,
+				B77C1B9D2B67D826004CA151 /* Main */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		B77C1B9F2B67D871004CA151 /* RandomPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				B77C1BA42B67D88E004CA151 /* RandomPhotoView.swift */,
+				B77C1BA62B67D895004CA151 /* RandomPhotoFeature.swift */,
+			);
+			path = RandomPhoto;
+			sourceTree = "<group>";
+		};
+		B77C1BA82B67FAFA004CA151 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				B77C1BA92B67FB05004CA151 /* DetailView.swift */,
+				B77C1BAB2B67FB0A004CA151 /* DetailFeature.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		B77C1BB22B6914BB004CA151 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B77C1BB32B6914F5004CA151 /* TransparentView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +244,9 @@
 			dependencies = (
 			);
 			name = PrographyAssignment;
+			packageProductDependencies = (
+				B77C1B9B2B67D433004CA151 /* ComposableArchitecture */,
+			);
 			productName = PrographyAssignment;
 			productReference = B77C1B632B67B9C9004CA151 /* PrographyAssignment.app */;
 			productType = "com.apple.product-type.application";
@@ -234,6 +319,9 @@
 				Base,
 			);
 			mainGroup = B77C1B5A2B67B9C9004CA151;
+			packageReferences = (
+				B77C1B9A2B67D433004CA151 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = B77C1B642B67B9C9004CA151 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -276,8 +364,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B77C1B692B67B9C9004CA151 /* ContentView.swift in Sources */,
+				B77C1BA72B67D895004CA151 /* RandomPhotoFeature.swift in Sources */,
+				B77C1BAC2B67FB0A004CA151 /* DetailFeature.swift in Sources */,
+				B77C1BAA2B67FB05004CA151 /* DetailView.swift in Sources */,
+				B77C1B992B67D41E004CA151 /* RootFeature.swift in Sources */,
+				B77C1BB42B6914F5004CA151 /* TransparentView.swift in Sources */,
+				B77C1BA12B67D87C004CA151 /* MainView.swift in Sources */,
+				B77C1BA32B67D881004CA151 /* MainFeature.swift in Sources */,
+				B77C1B972B67D417004CA151 /* RootView.swift in Sources */,
 				B77C1B932B67C3FF004CA151 /* PNavigationBar.swift in Sources */,
+				B77C1BA52B67D88E004CA151 /* RandomPhotoView.swift in Sources */,
 				B77C1B672B67B9C9004CA151 /* PrographyAssignmentApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -608,6 +704,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B77C1B9A2B67D433004CA151 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B77C1B9B2B67D433004CA151 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B77C1B9A2B67D433004CA151 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B77C1B5B2B67B9C9004CA151 /* Project object */;
 }
