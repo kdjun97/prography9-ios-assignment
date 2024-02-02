@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PhotosModel {
+struct PhotosModel: Hashable {
     let id: String
     let width: Int
     let height: Int
@@ -41,7 +41,7 @@ struct PhotosModel {
     }
 }
 
-struct PhotoUrl {
+struct PhotoUrl: Hashable {
     let raw: String
     let full: String
     let regular: String
@@ -50,7 +50,7 @@ struct PhotoUrl {
     let smallS3: String
 }
 
-struct PhotoLink {
+struct PhotoLink: Hashable {
     let linksSelf: String
     let html: String
     let download: String

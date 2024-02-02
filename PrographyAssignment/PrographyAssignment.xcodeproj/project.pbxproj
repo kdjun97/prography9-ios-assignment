@@ -35,6 +35,8 @@
 		B77C1BD72B6A97C8004CA151 /* ResultMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1BD62B6A97C8004CA151 /* ResultMapper.swift */; };
 		B77C1BDA2B6B2797004CA151 /* ErrorCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1BD92B6B2797004CA151 /* ErrorCase.swift */; };
 		B77C1BDD2B6B2846004CA151 /* BaseUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1BDC2B6B2846004CA151 /* BaseUrl.swift */; };
+		B77C1BE02B6BB3F4004CA151 /* CellTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1BDF2B6BB3F4004CA151 /* CellTitleView.swift */; };
+		B77C1BE22B6BD6DB004CA151 /* PhotoGridItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1BE12B6BD6DB004CA151 /* PhotoGridItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,8 @@
 		B77C1BD62B6A97C8004CA151 /* ResultMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultMapper.swift; sourceTree = "<group>"; };
 		B77C1BD92B6B2797004CA151 /* ErrorCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCase.swift; sourceTree = "<group>"; };
 		B77C1BDC2B6B2846004CA151 /* BaseUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUrl.swift; sourceTree = "<group>"; };
+		B77C1BDF2B6BB3F4004CA151 /* CellTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTitleView.swift; sourceTree = "<group>"; };
+		B77C1BE12B6BD6DB004CA151 /* PhotoGridItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +213,7 @@
 		B77C1B9D2B67D826004CA151 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				B77C1BDE2B6BB3E8004CA151 /* Component */,
 				B77C1BA02B67D87C004CA151 /* MainView.swift */,
 				B77C1BA22B67D881004CA151 /* MainFeature.swift */,
 			);
@@ -365,6 +370,15 @@
 			path = Error;
 			sourceTree = "<group>";
 		};
+		B77C1BDE2B6BB3E8004CA151 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				B77C1BDF2B6BB3F4004CA151 /* CellTitleView.swift */,
+				B77C1BE12B6BD6DB004CA151 /* PhotoGridItemView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -503,6 +517,7 @@
 			files = (
 				B77C1BD22B6A738C004CA151 /* PhotosModel.swift in Sources */,
 				B77C1BC62B694DB2004CA151 /* EndPoint.swift in Sources */,
+				B77C1BE22B6BD6DB004CA151 /* PhotoGridItemView.swift in Sources */,
 				B77C1BA72B67D895004CA151 /* RandomPhotoFeature.swift in Sources */,
 				B77C1BD52B6A748C004CA151 /* PhotosModelMapper.swift in Sources */,
 				B77C1BD02B6A7244004CA151 /* PhotosEntity.swift in Sources */,
@@ -513,6 +528,7 @@
 				B77C1BAA2B67FB05004CA151 /* DetailView.swift in Sources */,
 				B77C1BC02B694766004CA151 /* PUsecase.swift in Sources */,
 				B77C1BBC2B6946FD004CA151 /* ApiService.swift in Sources */,
+				B77C1BE02B6BB3F4004CA151 /* CellTitleView.swift in Sources */,
 				B77C1BDD2B6B2846004CA151 /* BaseUrl.swift in Sources */,
 				B77C1B992B67D41E004CA151 /* RootFeature.swift in Sources */,
 				B77C1BB42B6914F5004CA151 /* TransparentView.swift in Sources */,
