@@ -30,10 +30,14 @@ struct RootFeature {
             case .setSelectedTabIndex(let value):
                 state.selectedTabIndex = value
                 return .none
+            default:
+                return .none
             }
         }
         Scope(state: \.mainState, action: /Action.mainAction, child: {
-            MainFeature()._printChanges()
+            MainFeature(
+                pUseCase: PUsecase(networkRepositoryProtocol: NetworkRepository())
+            )._printChanges()
         })
         Scope(state: \.randomPhotoState, action: /Action.randomPhotoAction, child: {
             RandomPhotoFeature()._printChanges()
