@@ -19,7 +19,7 @@ struct RootView: View {
     }
     
     var body: some View {
-        ZStack(alignment: .bottom) {
+        VStack(spacing: 0) {
             RootContentView(store: store)
             PTabBar(store: store)
         }

@@ -32,6 +32,7 @@ struct MainView: View {
                     Spacer()
                         .frame(height: !viewStore.bookmarks.isEmpty ? 12 : 20)
                     RecentlyImageView(store: store)
+                    InfiniteScrollProgressView(store: store)
                 }
             }
         }
@@ -126,5 +127,25 @@ private struct RecentlyImageView: View {
             .padding(.vertical, 12)
             .padding(.horizontal, 16)
         }
+    }
+}
+
+private struct InfiniteScrollProgressView: View {
+    let store: StoreOf<MainFeature>
+    @ObservedObject private var viewStore: ViewStoreOf<MainFeature>
+    
+    init(store: StoreOf<MainFeature>) {
+        self.store = store
+        self.viewStore = ViewStore(store, observe: { $0 })
+    }
+    
+    var body: some View {
+        ProgressView()
+            .frame(height: 64)
+            .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    viewStore.send(.fetchPhotos)
+                }
+            }
     }
 }

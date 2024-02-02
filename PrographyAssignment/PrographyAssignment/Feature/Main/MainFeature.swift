@@ -19,27 +19,33 @@ struct MainFeature {
     struct State: Equatable {
         var bookmarks: [PhotosModel] = []
         var photos: [PhotosModel] = []
+        var currentPageIndex: Int = 1
+        var isLastPage: Bool = false
     }
     
     enum Action {
         case onAppear
-        case setPhotos([PhotosModel])
+        case appendPhotos([PhotosModel])
+        case fetchPhotos
     }
     
     var body: some ReducerOf<MainFeature> {
         Reduce { state, action in
             switch action {
             case .onAppear:
-                return .run { send in
-                    await send(getPhotos())
+                return .run { [currentPageIndex = state.currentPageIndex] send in
+                    await send(getPhotos(currentPageIndex: currentPageIndex))
                 }
-            case let .setPhotos(photos):
-                print("dONGdONG")
-                print(photos.count)
-                print(photos[0])
-                print("dONGdONG")
-                
-                state.photos = photos
+            case .fetchPhotos:
+                return .run { [currentPageIndex = state.currentPageIndex] send in
+                    await send(getPhotos(currentPageIndex: currentPageIndex+1))
+                }
+            case let .appendPhotos(photos):
+                state.isLastPage = compareLastPage(state: &state, receivedPhotos: photos)
+                if (!state.isLastPage) {
+                    state.currentPageIndex += 1
+                    state.photos += photos
+                }
                 return .none
             }
         }
@@ -47,14 +53,23 @@ struct MainFeature {
 }
 
 extension MainFeature {
-    func getPhotos() async -> Action {
-        let response = await pUseCase.getPhotos(queryParameter: ["page": "2"])
+    func getPhotos(currentPageIndex: Int) async -> Action {
+        let response = await pUseCase.getPhotos(queryParameter: ["page": String(currentPageIndex)])
         
         switch response {
         case let .success(photosModel):
-            return .setPhotos(photosModel)
+            return .appendPhotos(photosModel)
         case let .failure(errorCase):
-            return .setPhotos([]) // TODO : Error Handling
+            return .appendPhotos([]) // TODO : Error Handling
+        }
+    }
+    
+    func compareLastPage(state: inout State, receivedPhotos: [PhotosModel]) -> Bool {
+        if let receivedPhotosLastIndexId = receivedPhotos.last?.id,
+            let storedPhotosLastIndexId = state.photos.last?.id  {
+            return (receivedPhotosLastIndexId == storedPhotosLastIndexId)
+        } else {
+            return false
         }
     }
 }
