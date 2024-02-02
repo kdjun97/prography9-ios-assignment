@@ -10,8 +10,12 @@ import Foundation
 class NetworkRepository: NetworkRepositoryProtocol {
     let apiService = ApiService()
     
-    func getPhotos(endPoint: String) async -> Result<[PhotosModel], ErrorCase> {
-        let responseData = await apiService.callApiService(apiMethod: .get, endPoint: endPoint)
+    func getPhotos(queryParameter: [String:String]) async -> Result<[PhotosModel], ErrorCase> {
+        let responseData = await apiService.callApiService(
+            apiMethod: .get, 
+            endPoint: EndPoint.photos,
+            queryParameter: queryParameter
+        )
         let entityDataResult = ResultMapper<[PhotoItem]>().toMap(responseData)
         switch entityDataResult {
         case let .success(entityData):
