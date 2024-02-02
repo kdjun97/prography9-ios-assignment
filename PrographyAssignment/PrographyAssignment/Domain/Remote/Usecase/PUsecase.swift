@@ -10,7 +10,7 @@ import Foundation
 struct PUsecase {
     let networkRepositoryProtocol: NetworkRepositoryProtocol
     
-    func getPhotos(endPoint: String) async -> Result<[PhotosModel], ErrorCase> {
-        return await networkRepositoryProtocol.getPhotos(endPoint: endPoint)
+    func getPhotos(queryParameter: [String:String]) async -> Result<[PhotosModel], ErrorCase> {
+        return await networkRepositoryProtocol.getPhotos(queryParameter: queryParameter)
     }
 }

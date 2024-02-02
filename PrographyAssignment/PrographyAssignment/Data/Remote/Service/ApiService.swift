@@ -11,18 +11,31 @@ import Combine
 class ApiService {
     func callApiService(
         apiMethod: ApiMethod,
-        endPoint: String
+        endPoint: String,
+        queryParameter: [String:String]? = nil
     ) async -> Result<Data, ErrorCase> {
         do {
             let urlComponents = URLComponents(string: "\(BaseUrl.baseUrl)\(endPoint)")
+            
+            guard var urlComponent = urlComponents else {
+                return .failure(ErrorCase.nilError)
+            }
+            
             let config = URLSessionConfiguration.default
             config.httpAdditionalHeaders = [
                 "Authorization": "Client-ID NUHNZ0AdeQOaEW5TNz7R-_z7CoHoPPRPm0BscX3FGo8",
                 "Content-Type": "application/json"
             ]
+            
             let session = URLSession(configuration: config)
             
-            guard let requestURL = urlComponents?.url else {
+            if let queryParameter = queryParameter {
+                urlComponent.queryItems = queryParameter.map { dictionary in
+                    URLQueryItem(name: dictionary.key, value: dictionary.value)
+                }
+            }
+            
+            guard let requestURL = urlComponent.url else {
                 return .failure(ErrorCase.nilError)
             }
             

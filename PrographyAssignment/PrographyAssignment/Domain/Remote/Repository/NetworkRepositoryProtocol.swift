@@ -8,5 +8,5 @@
 import Foundation
 
 protocol NetworkRepositoryProtocol {
-    func getPhotos(endPoint: String) async -> Result<[PhotosModel], ErrorCase>
+    func getPhotos(queryParameter: [String:String]) async -> Result<[PhotosModel], ErrorCase>
 }

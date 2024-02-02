@@ -48,7 +48,7 @@ struct MainFeature {
 
 extension MainFeature {
     func getPhotos() async -> Action {
-        let response = await pUseCase.getPhotos(endPoint: EndPoint.photos)
+        let response = await pUseCase.getPhotos(queryParameter: ["page": "2"])
         
         switch response {
         case let .success(photosModel):
