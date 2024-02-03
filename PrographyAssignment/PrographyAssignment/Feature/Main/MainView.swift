@@ -156,7 +156,7 @@ private struct InfiniteScrollProgressView: View {
         ProgressView()
             .frame(height: 64)
             .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                     viewStore.send(.fetchPhotos)
                 }
             }
