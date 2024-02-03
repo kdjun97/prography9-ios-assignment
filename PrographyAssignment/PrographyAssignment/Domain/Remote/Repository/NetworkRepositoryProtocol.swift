@@ -10,4 +10,5 @@ import Foundation
 protocol NetworkRepositoryProtocol {
     func getPhotos(queryParameter: [String:String]) async -> Result<[PhotosModel], ErrorCase>
     func getDetailPhoto(id: String) async -> Result<PhotosModel, ErrorCase>
+    func getRandomPhoto() async -> Result<PhotosModel, ErrorCase>
 }

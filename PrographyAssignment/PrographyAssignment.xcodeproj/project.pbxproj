@@ -30,14 +30,15 @@
 		B77C1BCE2B6A66CA004CA151 /* NetworkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1BCD2B6A66CA004CA151 /* NetworkRepository.swift */; };
 		B77C1BD02B6A7244004CA151 /* PhotosEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1BCF2B6A7244004CA151 /* PhotosEntity.swift */; };
 		B77C1BD22B6A738C004CA151 /* PhotosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1BD12B6A738C004CA151 /* PhotosModel.swift */; };
-		B77C1BD52B6A748C004CA151 /* PhotosModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1BD42B6A748C004CA151 /* PhotosModelMapper.swift */; };
+		B77C1BD52B6A748C004CA151 /* PhotosListModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1BD42B6A748C004CA151 /* PhotosListModelMapper.swift */; };
 		B77C1BD72B6A97C8004CA151 /* ResultMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1BD62B6A97C8004CA151 /* ResultMapper.swift */; };
 		B77C1BDA2B6B2797004CA151 /* ErrorCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1BD92B6B2797004CA151 /* ErrorCase.swift */; };
 		B77C1BDD2B6B2846004CA151 /* BaseUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1BDC2B6B2846004CA151 /* BaseUrl.swift */; };
 		B77C1BE02B6BB3F4004CA151 /* CellTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1BDF2B6BB3F4004CA151 /* CellTitleView.swift */; };
-		B77C1BE22B6BD6DB004CA151 /* PhotoGridItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1BE12B6BD6DB004CA151 /* PhotoGridItemView.swift */; };
 		B77C1BEE2B6DE7FD004CA151 /* OpaqueBackgroundModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1BED2B6DE7FD004CA151 /* OpaqueBackgroundModifier.swift */; };
-		B77C1BF02B6DFF49004CA151 /* PhotosDetailModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1BEF2B6DFF49004CA151 /* PhotosDetailModelMapper.swift */; };
+		B77C1BF02B6DFF49004CA151 /* PhotoModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1BEF2B6DFF49004CA151 /* PhotoModelMapper.swift */; };
+		B77C1BF62B6E4DEA004CA151 /* PhotoGridItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1BF52B6E4DEA004CA151 /* PhotoGridItemView.swift */; };
+		B77C1BF92B6E4E47004CA151 /* RandomPhotoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1BF82B6E4E47004CA151 /* RandomPhotoCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,14 +84,15 @@
 		B77C1BCD2B6A66CA004CA151 /* NetworkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRepository.swift; sourceTree = "<group>"; };
 		B77C1BCF2B6A7244004CA151 /* PhotosEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosEntity.swift; sourceTree = "<group>"; };
 		B77C1BD12B6A738C004CA151 /* PhotosModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosModel.swift; sourceTree = "<group>"; };
-		B77C1BD42B6A748C004CA151 /* PhotosModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosModelMapper.swift; sourceTree = "<group>"; };
+		B77C1BD42B6A748C004CA151 /* PhotosListModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListModelMapper.swift; sourceTree = "<group>"; };
 		B77C1BD62B6A97C8004CA151 /* ResultMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultMapper.swift; sourceTree = "<group>"; };
 		B77C1BD92B6B2797004CA151 /* ErrorCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCase.swift; sourceTree = "<group>"; };
 		B77C1BDC2B6B2846004CA151 /* BaseUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUrl.swift; sourceTree = "<group>"; };
 		B77C1BDF2B6BB3F4004CA151 /* CellTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTitleView.swift; sourceTree = "<group>"; };
-		B77C1BE12B6BD6DB004CA151 /* PhotoGridItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridItemView.swift; sourceTree = "<group>"; };
 		B77C1BED2B6DE7FD004CA151 /* OpaqueBackgroundModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpaqueBackgroundModifier.swift; sourceTree = "<group>"; };
-		B77C1BEF2B6DFF49004CA151 /* PhotosDetailModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosDetailModelMapper.swift; sourceTree = "<group>"; };
+		B77C1BEF2B6DFF49004CA151 /* PhotoModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModelMapper.swift; sourceTree = "<group>"; };
+		B77C1BF52B6E4DEA004CA151 /* PhotoGridItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoGridItemView.swift; sourceTree = "<group>"; };
+		B77C1BF82B6E4E47004CA151 /* RandomPhotoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPhotoCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +238,7 @@
 		B77C1B9F2B67D871004CA151 /* RandomPhoto */ = {
 			isa = PBXGroup;
 			children = (
+				B77C1BF72B6E4E3C004CA151 /* Component */,
 				B77C1BA42B67D88E004CA151 /* RandomPhotoView.swift */,
 				B77C1BA62B67D895004CA151 /* RandomPhotoFeature.swift */,
 			);
@@ -350,9 +353,9 @@
 		B77C1BD32B6A7473004CA151 /* Mapper */ = {
 			isa = PBXGroup;
 			children = (
-				B77C1BD42B6A748C004CA151 /* PhotosModelMapper.swift */,
+				B77C1BD42B6A748C004CA151 /* PhotosListModelMapper.swift */,
 				B77C1BD62B6A97C8004CA151 /* ResultMapper.swift */,
-				B77C1BEF2B6DFF49004CA151 /* PhotosDetailModelMapper.swift */,
+				B77C1BEF2B6DFF49004CA151 /* PhotoModelMapper.swift */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -369,7 +372,6 @@
 			isa = PBXGroup;
 			children = (
 				B77C1BDF2B6BB3F4004CA151 /* CellTitleView.swift */,
-				B77C1BE12B6BD6DB004CA151 /* PhotoGridItemView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -377,6 +379,7 @@
 		B77C1BEB2B6DE7CA004CA151 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				B77C1BF42B6E4DEA004CA151 /* Image */,
 				B77C1B912B67C3F2004CA151 /* NavigationBar */,
 			);
 			path = Component;
@@ -388,6 +391,22 @@
 				B77C1BED2B6DE7FD004CA151 /* OpaqueBackgroundModifier.swift */,
 			);
 			path = Modifier;
+			sourceTree = "<group>";
+		};
+		B77C1BF42B6E4DEA004CA151 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				B77C1BF52B6E4DEA004CA151 /* PhotoGridItemView.swift */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		B77C1BF72B6E4E3C004CA151 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				B77C1BF82B6E4E47004CA151 /* RandomPhotoCard.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -528,11 +547,11 @@
 			files = (
 				B77C1BD22B6A738C004CA151 /* PhotosModel.swift in Sources */,
 				B77C1BEE2B6DE7FD004CA151 /* OpaqueBackgroundModifier.swift in Sources */,
-				B77C1BF02B6DFF49004CA151 /* PhotosDetailModelMapper.swift in Sources */,
+				B77C1BF62B6E4DEA004CA151 /* PhotoGridItemView.swift in Sources */,
+				B77C1BF02B6DFF49004CA151 /* PhotoModelMapper.swift in Sources */,
 				B77C1BC62B694DB2004CA151 /* EndPoint.swift in Sources */,
-				B77C1BE22B6BD6DB004CA151 /* PhotoGridItemView.swift in Sources */,
 				B77C1BA72B67D895004CA151 /* RandomPhotoFeature.swift in Sources */,
-				B77C1BD52B6A748C004CA151 /* PhotosModelMapper.swift in Sources */,
+				B77C1BD52B6A748C004CA151 /* PhotosListModelMapper.swift in Sources */,
 				B77C1BD02B6A7244004CA151 /* PhotosEntity.swift in Sources */,
 				B77C1BDA2B6B2797004CA151 /* ErrorCase.swift in Sources */,
 				B77C1BCE2B6A66CA004CA151 /* NetworkRepository.swift in Sources */,
@@ -545,6 +564,7 @@
 				B77C1BDD2B6B2846004CA151 /* BaseUrl.swift in Sources */,
 				B77C1B992B67D41E004CA151 /* RootFeature.swift in Sources */,
 				B77C1BA12B67D87C004CA151 /* MainView.swift in Sources */,
+				B77C1BF92B6E4E47004CA151 /* RandomPhotoCard.swift in Sources */,
 				B77C1BA32B67D881004CA151 /* MainFeature.swift in Sources */,
 				B77C1B972B67D417004CA151 /* RootView.swift in Sources */,
 				B77C1BD72B6A97C8004CA151 /* ResultMapper.swift in Sources */,

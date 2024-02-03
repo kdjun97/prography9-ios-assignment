@@ -42,6 +42,10 @@ struct RootFeature {
             case .detailAction(.backButtonTapped):
                 state.isDetailPhoto = false
                 return .none
+            case let .randomPhotoAction(.informationButtonTapped(detailModel)):
+                state.detailState.model = detailModel
+                state.isDetailPhoto = true
+                return .none
             case .binding:
                 return .none
             default :
@@ -52,7 +56,7 @@ struct RootFeature {
             MainFeature(pUseCase: pUseCase)._printChanges()
         })
         Scope(state: \.randomPhotoState, action: /Action.randomPhotoAction, child: {
-            RandomPhotoFeature()._printChanges()
+            RandomPhotoFeature(pUseCase: pUseCase)._printChanges()
         })
         Scope(state: \.detailState, action: /Action.detailAction, child: {
             DetailFeature(pUseCase: pUseCase)._printChanges()
