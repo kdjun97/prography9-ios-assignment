@@ -11,13 +11,10 @@ import ComposableArchitecture
 @Reducer
 struct MainFeature {
     let pUseCase: PUsecase
-    
-    init(pUseCase: PUsecase) {
-        self.pUseCase = pUseCase
-    }
+    let localUseCase: LocalUsecase
     
     struct State: Equatable {
-        var bookmarks: [PhotosModel] = []
+        var bookmarks: [BookMarkModel] = []
         var photos: [PhotosModel] = []
         var currentPageIndex: Int = 1
         var isLastPage: Bool = false
@@ -29,6 +26,7 @@ struct MainFeature {
         case fetchPhotos
         case photoTapped(String)
         case showFullScreenCoverFromRoot(PhotosModel)
+        case fetchBookmark
         case none
     }
     
@@ -36,6 +34,7 @@ struct MainFeature {
         Reduce { state, action in
             switch action {
             case .onAppear:
+                state.bookmarks = localUseCase.getBookMarkInformation()
                 return .run { [currentPageIndex = state.currentPageIndex] send in
                     await send(getPhotos(currentPageIndex: currentPageIndex))
                 }
@@ -55,6 +54,9 @@ struct MainFeature {
                     await send(getDetailPhoto(id: id))
                 }
             case .showFullScreenCoverFromRoot:
+                return .none
+            case .fetchBookmark:
+                state.bookmarks = localUseCase.getBookMarkInformation()
                 return .none
             case .none: // need Error Handling (temporary case)
                 return .none

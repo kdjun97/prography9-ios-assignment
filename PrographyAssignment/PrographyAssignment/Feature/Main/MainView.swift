@@ -60,14 +60,17 @@ private struct BookMarkView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHGrid(rows: rows, spacing: 10) {
                     ForEach(viewStore.bookmarks, id: \.self) { item in
-                        PhotoGridItemView(
-                            width: item.width,
-                            height: item.height,
-                            url: item.urls.small
-                        )
-                        .frame(maxHeight: .infinity)
-                        .cornerRadius(10)
-                        .clipped()
+                        Button {
+                            viewStore.send(.photoTapped(item.id))
+                        } label: {
+                            PhotoGridItemView(
+                                width: item.width,
+                                height: item.height,
+                                url: item.url
+                            )
+                            .cornerRadius(10)
+                            .clipped()
+                        }
                     }
                 }
             }
@@ -75,6 +78,7 @@ private struct BookMarkView: View {
             .padding(.leading, 16)
             .frame(maxHeight: .infinity)
         }
+        .frame(height: 195)
     }
 }
 

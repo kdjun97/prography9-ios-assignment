@@ -11,6 +11,7 @@ import ComposableArchitecture
 @Reducer
 struct RootFeature {
     let pUseCase = PUsecase(networkRepositoryProtocol: NetworkRepository())
+    let localUseCase = LocalUsecase(localRepositoryProtocol: LocalRepository())
     
     struct State: Equatable {
         var mainState = MainFeature.State()
@@ -41,7 +42,7 @@ struct RootFeature {
                 return .none
             case .detailAction(.backButtonTapped):
                 state.isDetailPhoto = false
-                return .none
+                return .send(.mainAction(.fetchBookmark))
             case let .randomPhotoAction(.informationButtonTapped(detailModel)):
                 state.detailState.model = detailModel
                 state.isDetailPhoto = true
@@ -53,13 +54,13 @@ struct RootFeature {
             }
         }
         Scope(state: \.mainState, action: /Action.mainAction, child: {
-            MainFeature(pUseCase: pUseCase)._printChanges()
+            MainFeature(pUseCase: pUseCase, localUseCase: localUseCase)._printChanges()
         })
         Scope(state: \.randomPhotoState, action: /Action.randomPhotoAction, child: {
             RandomPhotoFeature(pUseCase: pUseCase)._printChanges()
         })
         Scope(state: \.detailState, action: /Action.detailAction, child: {
-            DetailFeature(pUseCase: pUseCase)._printChanges()
+            DetailFeature(pUseCase: pUseCase, localUseCase: localUseCase)._printChanges()
         })
     }
 }
