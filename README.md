@@ -1,6 +1,9 @@
 # Prography 9기  
 
-모바일 과제 테스트  
+Prography 9기 모바일 과제 테스트  
+
+[개발 환경]  
+Target: iOS 17.0  
 
 [구현 완료]  
 
