@@ -36,11 +36,11 @@ struct MainFeature {
             case .onAppear:
                 state.bookmarks = localUseCase.getBookMarkInformation()
                 return .run { [currentPageIndex = state.currentPageIndex] send in
-                    await send(getPhotos(currentPageIndex: currentPageIndex))
+                    await send(getPhotos(currentPageIndex: currentPageIndex, isOnAppear: true))
                 }
             case .fetchPhotos:
                 return .run { [currentPageIndex = state.currentPageIndex] send in
-                    await send(getPhotos(currentPageIndex: currentPageIndex+1))
+                    await send(getPhotos(currentPageIndex: currentPageIndex+1, isOnAppear: false))
                 }
             case let .appendPhotos(photos):
                 state.isLastPage = compareLastPage(state: &state, receivedPhotos: photos)
@@ -66,12 +66,16 @@ struct MainFeature {
 }
 
 extension MainFeature {
-    func getPhotos(currentPageIndex: Int) async -> Action {
+    func getPhotos(currentPageIndex: Int, isOnAppear: Bool) async -> Action {
         let response = await pUseCase.getPhotos(queryParameter: ["page": String(currentPageIndex)])
         
         switch response {
         case let .success(photosModel):
-            return .appendPhotos(photosModel)
+            if isOnAppear {
+                return .none
+            } else {
+                return .appendPhotos(photosModel)
+            }
         case let .failure(errorCase):
             return .appendPhotos([]) // TODO : Error Handling
         }
