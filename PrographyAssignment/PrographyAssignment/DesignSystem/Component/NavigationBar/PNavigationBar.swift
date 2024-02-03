@@ -47,6 +47,7 @@ struct PNavigationBar: View {
                     HStack {
                         Text(title ?? "-")
                             .font(.system(size: 20, weight: .bold))
+                            .lineLimit(1)
                             .foregroundStyle(.white)
                         Spacer()
                     }

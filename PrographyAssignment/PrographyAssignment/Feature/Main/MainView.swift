@@ -75,7 +75,6 @@ private struct BookMarkView: View {
             .padding(.leading, 16)
             .frame(maxHeight: .infinity)
         }
-        .frame(height: 195)
     }
 }
 
@@ -97,14 +96,18 @@ private struct RecentlyImageView: View {
                     LazyVGrid(columns: columns, spacing: 10) {
                         ForEach(Array(zip(viewStore.photos.indices, viewStore.photos)), id: \.0) { index, item in
                             if (index % 2 == 0) {
-                                PhotoGridItemView(
-                                    width: item.width,
-                                    height: item.height,
-                                    url: item.urls.small
-                                )
-                                .frame(maxWidth: .infinity)
-                                .cornerRadius(10)
-                                .clipped()
+                                Button {
+                                    viewStore.send(.photoTapped(item.id))
+                                } label: {
+                                    PhotoGridItemView(
+                                        width: item.width,
+                                        height: item.height,
+                                        url: item.urls.small
+                                    )
+                                    .frame(maxWidth: .infinity)
+                                    .cornerRadius(10)
+                                    .clipped()
+                                }
                             }
                         }
                     }
@@ -112,14 +115,18 @@ private struct RecentlyImageView: View {
                     LazyVGrid(columns: columns, spacing: 10) {
                         ForEach(Array(zip(viewStore.photos.indices, viewStore.photos)), id: \.0) { index, item in
                             if (index % 2 == 1) {
-                                PhotoGridItemView(
-                                    width: item.width,
-                                    height: item.height,
-                                    url: item.urls.small
-                                )
-                                .frame(maxWidth: .infinity)
-                                .cornerRadius(10)
-                                .clipped()
+                                Button {
+                                    viewStore.send(.photoTapped(item.id))
+                                } label: {
+                                    PhotoGridItemView(
+                                        width: item.width,
+                                        height: item.height,
+                                        url: item.urls.small
+                                    )
+                                    .frame(maxWidth: .infinity)
+                                    .cornerRadius(10)
+                                    .clipped()
+                                }
                             }
                         }
                     }

@@ -10,40 +10,52 @@ import ComposableArchitecture
 
 @Reducer
 struct RootFeature {
+    let pUseCase = PUsecase(networkRepositoryProtocol: NetworkRepository())
+    
     struct State: Equatable {
         var mainState = MainFeature.State()
         var randomPhotoState = RandomPhotoFeature.State()
         var detailState = DetailFeature.State()
         var selectedTabIndex: Int = 0
+        @BindingState var isDetailPhoto: Bool = false
     }
     
-    enum Action {
+    enum Action: BindableAction {
         case mainAction(MainFeature.Action)
         case randomPhotoAction(RandomPhotoFeature.Action)
         case detailAction(DetailFeature.Action)
         case setSelectedTabIndex(Int)
+        case binding(BindingAction<State>)
     }
     
     var body: some ReducerOf<RootFeature> {
+        BindingReducer()
         Reduce { state, action in
             switch action {
             case .setSelectedTabIndex(let value):
                 state.selectedTabIndex = value
                 return .none
-            default:
+            case let .mainAction(.showFullScreenCoverFromRoot(detailModel)):
+                state.detailState.model = detailModel
+                state.isDetailPhoto = true
+                return .none
+            case .detailAction(.backButtonTapped):
+                state.isDetailPhoto = false
+                return .none
+            case .binding:
+                return .none
+            default :
                 return .none
             }
         }
         Scope(state: \.mainState, action: /Action.mainAction, child: {
-            MainFeature(
-                pUseCase: PUsecase(networkRepositoryProtocol: NetworkRepository())
-            )._printChanges()
+            MainFeature(pUseCase: pUseCase)._printChanges()
         })
         Scope(state: \.randomPhotoState, action: /Action.randomPhotoAction, child: {
             RandomPhotoFeature()._printChanges()
         })
         Scope(state: \.detailState, action: /Action.detailAction, child: {
-            DetailFeature()._printChanges()
+            DetailFeature(pUseCase: pUseCase)._printChanges()
         })
     }
 }

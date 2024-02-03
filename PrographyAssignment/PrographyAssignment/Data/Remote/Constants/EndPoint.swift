@@ -10,5 +10,7 @@ import Foundation
 struct EndPoint {
     static let photos = "/photos"
     static let randomPhoto = "/photos/random"
-    static let photoDetail = "/photos/:id"
+    static var photoDetail: (String) -> String = { id in
+        "/photos/\(id)"
+    }
 }

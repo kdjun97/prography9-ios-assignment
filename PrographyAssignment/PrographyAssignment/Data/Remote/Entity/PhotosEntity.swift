@@ -16,6 +16,7 @@ struct PhotoItem: Codable {
     let links: PhotoLinks?
     let likes: Int?
     let likedByUser: Bool?
+    let user: User?
 
     enum CodingKeys: String, CodingKey {
         case id, slug
@@ -28,6 +29,7 @@ struct PhotoItem: Codable {
         case altDescription = "alt_description"
         case urls, links, likes
         case likedByUser = "liked_by_user"
+        case user
     }
 }
 
@@ -49,4 +51,8 @@ struct PhotoLinks: Codable {
         case html, download
         case downloadLocation = "download_location"
     }
+}
+
+struct User: Codable {
+    let username: String?
 }
