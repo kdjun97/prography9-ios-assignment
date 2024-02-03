@@ -32,7 +32,9 @@ struct MainView: View {
                     Spacer()
                         .frame(height: !viewStore.bookmarks.isEmpty ? 12 : 20)
                     RecentlyImageView(store: store)
-                    InfiniteScrollProgressView(store: store)
+                    if (!viewStore.isLastPage) {
+                        InfiniteScrollProgressView(store: store)
+                    }
                 }
             }
         }
