@@ -12,18 +12,21 @@ struct PNavigationBar: View {
     let isLogo: Bool
     let title: String?
     let isBookmarked: Bool
-    let buttonAction: (() -> Void)?
+    let leadingButtonAction: (() -> Void)?
+    let bookmarkButtonAction: (() -> Void)?
     
     init(
         isLogo: Bool,
         title: String? = nil,
         isBookmarked: Bool = false,
-        buttonAction: (() -> Void)? = nil
+        buttonAction: (() -> Void)? = nil,
+        bookmarkButtonAction: (() -> Void)? = nil
     ) {
         self.isLogo = isLogo
         self.title = title
         self.isBookmarked = isBookmarked
-        self.buttonAction = buttonAction
+        self.leadingButtonAction = buttonAction
+        self.bookmarkButtonAction = bookmarkButtonAction
     }
     
     var body: some View {
@@ -34,7 +37,7 @@ struct PNavigationBar: View {
             } else {
                 HStack(spacing: 0) {
                     Button {
-                        if let buttonAction = buttonAction {
+                        if let buttonAction = leadingButtonAction {
                             buttonAction()
                         }
                     } label : {
@@ -55,9 +58,16 @@ struct PNavigationBar: View {
                     Image("download")
                         .padding(10)
                         .padding(.trailing,4)
-                    Image("bookmark")
-                        .opacity(isBookmarked ? 0.3 : 1.0)
-                        .padding(10)
+                    Button {
+                        if let bookmarkButtonAction = bookmarkButtonAction {
+                            bookmarkButtonAction()
+                        }
+                    } label: {
+                        Image("bookmark")
+                            .opacity(isBookmarked ? 0.3 : 1.0)
+                            .padding(10)
+                    }
+                    
                 }
                 .padding(.horizontal, 16)
             }

@@ -39,6 +39,12 @@
 		B77C1BF02B6DFF49004CA151 /* PhotoModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1BEF2B6DFF49004CA151 /* PhotoModelMapper.swift */; };
 		B77C1BF62B6E4DEA004CA151 /* PhotoGridItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1BF52B6E4DEA004CA151 /* PhotoGridItemView.swift */; };
 		B77C1BF92B6E4E47004CA151 /* RandomPhotoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1BF82B6E4E47004CA151 /* RandomPhotoCard.swift */; };
+		B77C1C022B6E773B004CA151 /* LocalRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1C012B6E773B004CA151 /* LocalRepositoryProtocol.swift */; };
+		B77C1C042B6E7741004CA151 /* LocalUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1C032B6E7741004CA151 /* LocalUsecase.swift */; };
+		B77C1C072B6E7757004CA151 /* LocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1C062B6E7757004CA151 /* LocalRepository.swift */; };
+		B77C1C0A2B6E787D004CA151 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1C092B6E787D004CA151 /* LocalStorage.swift */; };
+		B77C1C0D2B6E7A22004CA151 /* LocalStorageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1C0C2B6E7A22004CA151 /* LocalStorageKey.swift */; };
+		B77C1C102B6E8F6D004CA151 /* BookMarkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1C0F2B6E8F6D004CA151 /* BookMarkModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +99,12 @@
 		B77C1BEF2B6DFF49004CA151 /* PhotoModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModelMapper.swift; sourceTree = "<group>"; };
 		B77C1BF52B6E4DEA004CA151 /* PhotoGridItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoGridItemView.swift; sourceTree = "<group>"; };
 		B77C1BF82B6E4E47004CA151 /* RandomPhotoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPhotoCard.swift; sourceTree = "<group>"; };
+		B77C1C012B6E773B004CA151 /* LocalRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRepositoryProtocol.swift; sourceTree = "<group>"; };
+		B77C1C032B6E7741004CA151 /* LocalUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalUsecase.swift; sourceTree = "<group>"; };
+		B77C1C062B6E7757004CA151 /* LocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRepository.swift; sourceTree = "<group>"; };
+		B77C1C092B6E787D004CA151 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
+		B77C1C0C2B6E7A22004CA151 /* LocalStorageKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageKey.swift; sourceTree = "<group>"; };
+		B77C1C0F2B6E8F6D004CA151 /* BookMarkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMarkModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +269,7 @@
 		B77C1BB82B6946CE004CA151 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				B77C1BFE2B6E7702004CA151 /* Local */,
 				B77C1BBA2B6946EB004CA151 /* Remote */,
 			);
 			path = Data;
@@ -265,6 +278,7 @@
 		B77C1BB92B6946D7004CA151 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				B77C1BFD2B6E76FA004CA151 /* Local */,
 				B77C1BD82B6B278A004CA151 /* Error */,
 				B77C1BBE2B69473C004CA151 /* Remote */,
 			);
@@ -409,6 +423,74 @@
 			path = Component;
 			sourceTree = "<group>";
 		};
+		B77C1BFD2B6E76FA004CA151 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				B77C1C0E2B6E8F62004CA151 /* Model */,
+				B77C1C002B6E772A004CA151 /* Repository */,
+				B77C1BFF2B6E7721004CA151 /* Usecase */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		B77C1BFE2B6E7702004CA151 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				B77C1C0B2B6E7A08004CA151 /* Constants */,
+				B77C1C082B6E77E3004CA151 /* LocalStorage */,
+				B77C1C052B6E774E004CA151 /* Repository */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		B77C1BFF2B6E7721004CA151 /* Usecase */ = {
+			isa = PBXGroup;
+			children = (
+				B77C1C032B6E7741004CA151 /* LocalUsecase.swift */,
+			);
+			path = Usecase;
+			sourceTree = "<group>";
+		};
+		B77C1C002B6E772A004CA151 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				B77C1C012B6E773B004CA151 /* LocalRepositoryProtocol.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		B77C1C052B6E774E004CA151 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				B77C1C062B6E7757004CA151 /* LocalRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		B77C1C082B6E77E3004CA151 /* LocalStorage */ = {
+			isa = PBXGroup;
+			children = (
+				B77C1C092B6E787D004CA151 /* LocalStorage.swift */,
+			);
+			path = LocalStorage;
+			sourceTree = "<group>";
+		};
+		B77C1C0B2B6E7A08004CA151 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				B77C1C0C2B6E7A22004CA151 /* LocalStorageKey.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		B77C1C0E2B6E8F62004CA151 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B77C1C0F2B6E8F6D004CA151 /* BookMarkModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -547,6 +629,7 @@
 			files = (
 				B77C1BD22B6A738C004CA151 /* PhotosModel.swift in Sources */,
 				B77C1BEE2B6DE7FD004CA151 /* OpaqueBackgroundModifier.swift in Sources */,
+				B77C1C0D2B6E7A22004CA151 /* LocalStorageKey.swift in Sources */,
 				B77C1BF62B6E4DEA004CA151 /* PhotoGridItemView.swift in Sources */,
 				B77C1BF02B6DFF49004CA151 /* PhotoModelMapper.swift in Sources */,
 				B77C1BC62B694DB2004CA151 /* EndPoint.swift in Sources */,
@@ -562,7 +645,12 @@
 				B77C1BBC2B6946FD004CA151 /* ApiService.swift in Sources */,
 				B77C1BE02B6BB3F4004CA151 /* CellTitleView.swift in Sources */,
 				B77C1BDD2B6B2846004CA151 /* BaseUrl.swift in Sources */,
+				B77C1C042B6E7741004CA151 /* LocalUsecase.swift in Sources */,
+				B77C1C022B6E773B004CA151 /* LocalRepositoryProtocol.swift in Sources */,
 				B77C1B992B67D41E004CA151 /* RootFeature.swift in Sources */,
+				B77C1C102B6E8F6D004CA151 /* BookMarkModel.swift in Sources */,
+				B77C1C072B6E7757004CA151 /* LocalRepository.swift in Sources */,
+				B77C1C0A2B6E787D004CA151 /* LocalStorage.swift in Sources */,
 				B77C1BA12B67D87C004CA151 /* MainView.swift in Sources */,
 				B77C1BF92B6E4E47004CA151 /* RandomPhotoCard.swift in Sources */,
 				B77C1BA32B67D881004CA151 /* MainFeature.swift in Sources */,

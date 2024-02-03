@@ -20,7 +20,13 @@ struct DetailView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            PNavigationBar(isLogo: false, title: viewStore.model.username, buttonAction: { viewStore.send(.backButtonTapped) })
+            PNavigationBar(
+                isLogo: false,
+                title: viewStore.model.username,
+                isBookmarked: viewStore.isBookmarked,
+                buttonAction: { viewStore.send(.backButtonTapped) },
+                bookmarkButtonAction: { viewStore.send(.bookmarkButtonTapped) }
+            )
             DetailPhotoView(store: store)
             PhotoDescriptionView(store: store)
         }
