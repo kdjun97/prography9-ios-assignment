@@ -19,7 +19,7 @@ class NetworkRepository: NetworkRepositoryProtocol {
         let entityDataResult = ResultMapper<[PhotoItem]>().toMap(responseData)
         switch entityDataResult {
         case let .success(entityData):
-            let mappedData = PhotosModelMapper().toPhotosModel(photoItem: entityData)
+            let mappedData = PhotosListModelMapper().toPhotosModel(photoItem: entityData)
             return .success(mappedData)
         case let .failure(errorCase):
             return .failure(errorCase)
@@ -34,7 +34,22 @@ class NetworkRepository: NetworkRepositoryProtocol {
         let entityDataResult = ResultMapper<PhotoItem>().toMap(responseData)
         switch entityDataResult {
         case let .success(entityData):
-            let mappedData = PhotosDetailModelMapper().toPhotosModel(photoItem: entityData)
+            let mappedData = PhotoModelMapper().toPhotosModel(photoItem: entityData)
+            return .success(mappedData)
+        case let .failure(errorCase):
+            return .failure(errorCase)
+        }
+    }
+    
+    func getRandomPhoto() async -> Result<PhotosModel, ErrorCase> {
+        let responseData = await apiService.callApiService(
+            apiMethod: .get,
+            endPoint: EndPoint.randomPhoto
+        )
+        let entityDataResult = ResultMapper<PhotoItem>().toMap(responseData)
+        switch entityDataResult {
+        case let .success(entityData):
+            let mappedData = PhotoModelMapper().toPhotosModel(photoItem: entityData)
             return .success(mappedData)
         case let .failure(errorCase):
             return .failure(errorCase)

@@ -1,26 +1,28 @@
 //
-//  PhotosDetailModelMapper.swift
+//  PhotosModelMapper.swift
 //  PrographyAssignment
 //
-//  Created by 김동준 on 2/3/24
+//  Created by 김동준 on 1/31/24
 //
 
 import Foundation
 
-struct PhotosDetailModelMapper {
-    func toPhotosModel(photoItem: PhotoItem) -> PhotosModel {
-        return PhotosModel(
-            id: photoItem.id ?? "",
-            width: photoItem.width ?? 0,
-            height: photoItem.height ?? 0,
-            description: photoItem.description ?? "",
-            urls: PhotosDetailModelMapper.toPhotoUrl(photoItem.urls),
-            username: PhotosDetailModelMapper.toUsername(photoItem.user)
-        )
+struct PhotosListModelMapper {
+    func toPhotosModel(photoItem: [PhotoItem]) -> [PhotosModel] {
+        return photoItem.map { element in
+            PhotosModel(
+                id: element.id ?? "",
+                width: element.width ?? 0,
+                height: element.height ?? 0,
+                description: element.description ?? "",
+                urls: PhotosListModelMapper.toPhotoUrl(element.urls),
+                username: PhotosListModelMapper.toUsername(element.user)
+            )
+        }
     }
 }
 
-extension PhotosDetailModelMapper {
+extension PhotosListModelMapper {
     static func toPhotoUrl(_ photoUrls: PhotoUrls?) -> PhotoUrl {
         if let photoUrls = photoUrls {
             return PhotoUrl(

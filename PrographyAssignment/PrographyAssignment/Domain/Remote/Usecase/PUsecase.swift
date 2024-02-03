@@ -17,4 +17,8 @@ struct PUsecase {
     func getDetailPhoto(id: String) async -> Result<PhotosModel, ErrorCase> {
         return await networkRepositoryProtocol.getDetailPhoto(id: id)
     }
+    
+    func getRandomPhoto() async -> Result<PhotosModel, ErrorCase> {
+        return await networkRepositoryProtocol.getRandomPhoto()
+    }
 }
