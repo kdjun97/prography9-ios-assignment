@@ -27,6 +27,9 @@ struct MainFeature {
         case onAppear
         case appendPhotos([PhotosModel])
         case fetchPhotos
+        case photoTapped(String)
+        case showFullScreenCoverFromRoot(PhotosModel)
+        case none
     }
     
     var body: some ReducerOf<MainFeature> {
@@ -46,6 +49,14 @@ struct MainFeature {
                     state.currentPageIndex += 1
                     state.photos += photos
                 }
+                return .none
+            case let .photoTapped(id):
+                return .run { send in
+                    await send(getDetailPhoto(id: id))
+                }
+            case .showFullScreenCoverFromRoot:
+                return .none
+            case .none: // need Error Handling (temporary case)
                 return .none
             }
         }
@@ -70,6 +81,17 @@ extension MainFeature {
             return (receivedPhotosLastIndexId == storedPhotosLastIndexId)
         } else {
             return false
+        }
+    }
+    
+    func getDetailPhoto(id: String) async -> Action {
+        let response = await pUseCase.getDetailPhoto(id: id)
+        
+        switch response {
+        case let .success(photosModel):
+            return .showFullScreenCoverFromRoot(photosModel)
+        case let .failure(errorCase):
+            return .none // need Error handling
         }
     }
 }

@@ -39,7 +39,11 @@ private struct RootContentView: View {
         TabView(selection: viewStore.binding(get: \.selectedTabIndex, send: { newValue in .setSelectedTabIndex(newValue)})) {
             MainView(store: store.scope(state: \.mainState, action: \.mainAction)).tag(0)
             RandomPhotoView(store: store.scope(state: \.randomPhotoState, action: \.randomPhotoAction)).tag(1)
-        }.tabViewStyle(.page(indexDisplayMode: .never))
+        }
+        .tabViewStyle(.page(indexDisplayMode: .never))
+        .fullScreenCover(isPresented: viewStore.$isDetailPhoto) {
+            DetailView(store: store.scope(state: \.detailState, action: \.detailAction))
+        }
     }
 }
 

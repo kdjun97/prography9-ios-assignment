@@ -13,19 +13,29 @@ struct PhotosModel: Hashable {
     let height: Int
     let description: String
     let urls: PhotoUrl
+    let username: String
     
     init(
-        id: String,
-        width: Int,
-        height: Int,
-        description: String,
-        urls: PhotoUrl
+        id: String = "",
+        width: Int = 0,
+        height: Int = 0,
+        description: String = "",
+        urls: PhotoUrl = .init(
+            raw: "",
+            full: "",
+            regular: "",
+            small: "",
+            thumb: "",
+            smallS3: ""
+        ),
+        username: String = ""
     ) {
         self.id = id
         self.width = width
         self.height = height
         self.description = description
         self.urls = urls
+        self.username = username
     }
 }
 

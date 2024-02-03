@@ -37,6 +37,7 @@
 		B77C1BE02B6BB3F4004CA151 /* CellTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1BDF2B6BB3F4004CA151 /* CellTitleView.swift */; };
 		B77C1BE22B6BD6DB004CA151 /* PhotoGridItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1BE12B6BD6DB004CA151 /* PhotoGridItemView.swift */; };
 		B77C1BEE2B6DE7FD004CA151 /* OpaqueBackgroundModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1BED2B6DE7FD004CA151 /* OpaqueBackgroundModifier.swift */; };
+		B77C1BF02B6DFF49004CA151 /* PhotosDetailModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C1BEF2B6DFF49004CA151 /* PhotosDetailModelMapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		B77C1BDF2B6BB3F4004CA151 /* CellTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTitleView.swift; sourceTree = "<group>"; };
 		B77C1BE12B6BD6DB004CA151 /* PhotoGridItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridItemView.swift; sourceTree = "<group>"; };
 		B77C1BED2B6DE7FD004CA151 /* OpaqueBackgroundModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpaqueBackgroundModifier.swift; sourceTree = "<group>"; };
+		B77C1BEF2B6DFF49004CA151 /* PhotosDetailModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosDetailModelMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -350,6 +352,7 @@
 			children = (
 				B77C1BD42B6A748C004CA151 /* PhotosModelMapper.swift */,
 				B77C1BD62B6A97C8004CA151 /* ResultMapper.swift */,
+				B77C1BEF2B6DFF49004CA151 /* PhotosDetailModelMapper.swift */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 			files = (
 				B77C1BD22B6A738C004CA151 /* PhotosModel.swift in Sources */,
 				B77C1BEE2B6DE7FD004CA151 /* OpaqueBackgroundModifier.swift in Sources */,
+				B77C1BF02B6DFF49004CA151 /* PhotosDetailModelMapper.swift in Sources */,
 				B77C1BC62B694DB2004CA151 /* EndPoint.swift in Sources */,
 				B77C1BE22B6BD6DB004CA151 /* PhotoGridItemView.swift in Sources */,
 				B77C1BA72B67D895004CA151 /* RandomPhotoFeature.swift in Sources */,

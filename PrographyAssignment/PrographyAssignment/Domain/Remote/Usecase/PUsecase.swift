@@ -13,4 +13,8 @@ struct PUsecase {
     func getPhotos(queryParameter: [String:String]) async -> Result<[PhotosModel], ErrorCase> {
         return await networkRepositoryProtocol.getPhotos(queryParameter: queryParameter)
     }
+    
+    func getDetailPhoto(id: String) async -> Result<PhotosModel, ErrorCase> {
+        return await networkRepositoryProtocol.getDetailPhoto(id: id)
+    }
 }

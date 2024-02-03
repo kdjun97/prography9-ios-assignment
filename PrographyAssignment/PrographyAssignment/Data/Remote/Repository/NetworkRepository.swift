@@ -25,4 +25,19 @@ class NetworkRepository: NetworkRepositoryProtocol {
             return .failure(errorCase)
         }
     }
+    
+    func getDetailPhoto(id: String) async -> Result<PhotosModel, ErrorCase> {
+        let responseData = await apiService.callApiService(
+            apiMethod: .get,
+            endPoint: EndPoint.photoDetail(id)
+        )
+        let entityDataResult = ResultMapper<PhotoItem>().toMap(responseData)
+        switch entityDataResult {
+        case let .success(entityData):
+            let mappedData = PhotosDetailModelMapper().toPhotosModel(photoItem: entityData)
+            return .success(mappedData)
+        case let .failure(errorCase):
+            return .failure(errorCase)
+        }
+    }
 }
