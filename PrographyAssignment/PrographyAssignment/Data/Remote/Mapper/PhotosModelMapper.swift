@@ -14,12 +14,8 @@ struct PhotosModelMapper {
                 id: element.id ?? "",
                 width: element.width ?? 0,
                 height: element.height ?? 0,
-                color: element.color ?? "",
                 description: element.description ?? "",
-                urls: PhotosModelMapper.toPhotoUrl(element.urls),
-                links: PhotosModelMapper.toPhotoLink(element.links),
-                likes: element.likes ?? 0,
-                likedByUser: element.likedByUser ?? false
+                urls: PhotosModelMapper.toPhotoUrl(element.urls)
             )
         }
     }
@@ -44,26 +40,6 @@ extension PhotosModelMapper {
                 small: "",
                 thumb: "",
                 smallS3: ""
-            )
-        }
-    }
-}
-
-extension PhotosModelMapper {
-    static func toPhotoLink(_ photoLinks: PhotoLinks?) -> PhotoLink {
-        if let photoLinks = photoLinks {
-            return PhotoLink(
-                linksSelf: photoLinks.linksSelf ?? "",
-                html: photoLinks.html ?? "",
-                download: photoLinks.download ?? "",
-                downloadLocation: photoLinks.downloadLocation ?? ""
-            )
-        } else {
-            return PhotoLink(
-                linksSelf: "",
-                html: "",
-                download: "",
-                downloadLocation: ""
             )
         }
     }
