@@ -12,15 +12,18 @@ struct PNavigationBar: View {
     let isLogo: Bool
     let title: String?
     let isBookmarked: Bool
+    let buttonAction: (() -> Void)?
     
     init(
         isLogo: Bool,
         title: String? = nil,
-        isBookmarked: Bool = false
+        isBookmarked: Bool = false,
+        buttonAction: (() -> Void)? = nil
     ) {
         self.isLogo = isLogo
         self.title = title
         self.isBookmarked = isBookmarked
+        self.buttonAction = buttonAction
     }
     
     var body: some View {
@@ -31,13 +34,16 @@ struct PNavigationBar: View {
             } else {
                 HStack(spacing: 0) {
                     Button {
-                        // TODO: Navigate To Back
+                        if let buttonAction = buttonAction {
+                            buttonAction()
+                        }
                     } label : {
                         Image("x")
                             .padding(8)
                             .background(Circle().foregroundColor(.white))
-                            .padding(.trailing, 16)
                     }
+                    Spacer()
+                        .frame(width: 16)
                     HStack {
                         Text(title ?? "-")
                             .font(.system(size: 20, weight: .bold))
