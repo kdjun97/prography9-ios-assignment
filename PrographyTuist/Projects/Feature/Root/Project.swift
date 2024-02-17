@@ -11,5 +11,11 @@ import ProjectDescriptionHelpers
 let project = Project.makeModule(
     name: "RootFeature",
     platform: .iOS,
-    product: .framework
+    product: .framework,
+    dependencies: [
+        .external(name: "ComposableArchitecture"),
+        .project(target: "MainFeature", path: .relativeToRoot("Projects/Feature/Main")),
+        .project(target: "RandomPhotoFeature", path: .relativeToRoot("Projects/Feature/RandomPhoto")),
+        .project(target: "DetailFeature", path: .relativeToRoot("Projects/Feature/Detail"))
+    ]
 )

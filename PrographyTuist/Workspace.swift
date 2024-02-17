@@ -11,6 +11,9 @@ let workspace = Workspace(
     name: "Prography",
     projects: [
         "Projects/App",
-        "Projects/Feature/Root"
+        "Projects/Feature/Root",
+        "Projects/Feature/Main",
+        "Projects/Feature/RandomPhoto",
+        "Projects/Feature/Detail"
     ]
 )
