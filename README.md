@@ -30,3 +30,11 @@ Target: iOS 17.0
 - 우측 상단 북마크 버튼으로 북마크 저장, 삭제 가능
 - 북마크 opacity 적용 완료
 - Title, tag는 response field가 상세히 적혀있지 않아 일단은 raw string으로 대체
+
+# Tuist 적용
+
+Tuist 테스트로 적용해봄.  
+- Feature Module을 하나 더 둘까? 
+- TCA 의존성도 Core로 처리?
+- enum으로 각 케이스 나눠서 allCase 처리 (workspace)?
+- DI 처리 못함 아직
