@@ -14,6 +14,9 @@ let workspace = Workspace(
         "Projects/Feature/Root",
         "Projects/Feature/Main",
         "Projects/Feature/RandomPhoto",
-        "Projects/Feature/Detail"
+        "Projects/Feature/Detail",
+        "Projects/DesignSystem",
+        "Projects/Domain",
+        "Projects/Data"
     ]
 )

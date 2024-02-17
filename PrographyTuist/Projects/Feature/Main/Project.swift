@@ -11,5 +11,10 @@ import ProjectDescriptionHelpers
 let project = Project.makeModule(
     name: "MainFeature",
     platform: .iOS,
-    product: .framework
+    product: .staticFramework,
+    dependencies: [
+        .project(target: "DesignSystem", path: .relativeToRoot("Projects/DesignSystem")),
+        .project(target: "Domain", path: .relativeToRoot("Projects/Domain")),
+        .external(name: "ComposableArchitecture")
+    ]
 )
