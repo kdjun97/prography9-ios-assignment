@@ -14,16 +14,16 @@ struct RandomPhotoCard: View {
     let viewStore: ViewStoreOf<RandomPhotoFeature>
     let photo: PhotosModel
     
-    init(store: StoreOf<RandomPhotoFeature>, photo: PhotosModel) {
+    init(store: StoreOf<RandomPhotoFeature>, photo: PhotosModel, viewStore: ViewStoreOf<RandomPhotoFeature>) {
         self.store = store
-        self.viewStore = ViewStore(store, observe: { $0 })
         self.photo = photo
+        self.viewStore = viewStore
     }
     
     var body: some View {
         VStack(spacing: 0) {
             PhotoView(photo: photo)
-            PhotoHorizontalButton(store: store, photo: photo)
+            PhotoHorizontalButton(store: store, photo: photo, viewStore: viewStore)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(.white)
@@ -39,13 +39,13 @@ struct RandomPhotoCard: View {
 }
 
 private struct PhotoView: View {
-    let photo: PhotosModel
+    private let photo: PhotosModel
     
-    init(photo: PhotosModel) {
+    fileprivate init(photo: PhotosModel) {
         self.photo = photo
     }
     
-    var body: some View {
+    fileprivate var body: some View {
         GeometryReader { geometry in
             let width = geometry.size.width
             let height = Int(width) * photo.height / photo.width
@@ -69,17 +69,17 @@ private struct PhotoView: View {
 }
 
 private struct PhotoHorizontalButton: View {
-    let store: StoreOf<RandomPhotoFeature>
-    let viewStore: ViewStoreOf<RandomPhotoFeature>
-    let photo: PhotosModel
+    private let store: StoreOf<RandomPhotoFeature>
+    private let viewStore: ViewStoreOf<RandomPhotoFeature>
+    private let photo: PhotosModel
     
-    init(store: StoreOf<RandomPhotoFeature>, photo: PhotosModel) {
+    fileprivate init(store: StoreOf<RandomPhotoFeature>, photo: PhotosModel, viewStore: ViewStoreOf<RandomPhotoFeature>) {
         self.store = store
-        self.viewStore = ViewStore(store, observe: { $0 })
         self.photo = photo
+        self.viewStore = viewStore
     }
     
-    var body: some View {
+    fileprivate var body: some View {
         HStack(spacing: 32) {
             Button {
                 

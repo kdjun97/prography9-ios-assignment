@@ -10,7 +10,7 @@ import SwiftUI
 import ComposableArchitecture
 
 struct MainView: View {
-    let store: StoreOf<MainFeature>
+    private let store: StoreOf<MainFeature>
     @ObservedObject private var viewStore: ViewStoreOf<MainFeature>
     
     init(store: StoreOf<MainFeature>) {
@@ -26,14 +26,14 @@ struct MainView: View {
             ScrollView {
                 LazyVStack(spacing: 0) {
                     if (!viewStore.bookmarks.isEmpty) {
-                        BookMarkView(store: store)
+                        BookMarkView(store: store, viewStore: viewStore)
                             .padding(.top, 20)
                     }
                     Spacer()
                         .frame(height: !viewStore.bookmarks.isEmpty ? 12 : 20)
-                    RecentlyImageView(store: store)
+                    RecentlyImageView(store: store, viewStore: viewStore)
                     if (!viewStore.isLastPage) {
-                        InfiniteScrollProgressView(store: store)
+                        InfiniteScrollProgressView(store: store, viewStore: viewStore)
                     }
                 }
             }
@@ -45,16 +45,16 @@ struct MainView: View {
 }
 
 private struct BookMarkView: View {
-    let store: StoreOf<MainFeature>
+    private let store: StoreOf<MainFeature>
     @ObservedObject private var viewStore: ViewStoreOf<MainFeature>
-    let rows = [GridItem(.flexible(), spacing: 0, alignment: nil)]
+    private let rows = [GridItem(.flexible(), spacing: 0, alignment: nil)]
     
-    init(store: StoreOf<MainFeature>) {
+    fileprivate init(store: StoreOf<MainFeature>, viewStore: ViewStoreOf<MainFeature>) {
         self.store = store
-        self.viewStore = ViewStore(store, observe: { $0 })
+        self.viewStore = viewStore
     }
     
-    var body: some View {
+    fileprivate var body: some View {
         VStack(spacing: 0) {
             CellTitleView(title: "북마크")
             ScrollView(.horizontal, showsIndicators: false) {
@@ -83,16 +83,16 @@ private struct BookMarkView: View {
 }
 
 private struct RecentlyImageView: View {
-    let store: StoreOf<MainFeature>
+    private let store: StoreOf<MainFeature>
     @ObservedObject private var viewStore: ViewStoreOf<MainFeature>
-    let columns = Array(repeating: GridItem(.flexible(), spacing: 0), count: 1)
+    private let columns = Array(repeating: GridItem(.flexible(), spacing: 0), count: 1)
     
-    init(store: StoreOf<MainFeature>) {
+    fileprivate init(store: StoreOf<MainFeature>, viewStore: ViewStoreOf<MainFeature>) {
         self.store = store
-        self.viewStore = ViewStore(store, observe: { $0 })
+        self.viewStore = viewStore
     }
     
-    var body: some View {
+    fileprivate var body: some View {
         VStack(spacing: 0) {
             CellTitleView(title: "최신 이미지")
             ScrollView {
@@ -144,15 +144,15 @@ private struct RecentlyImageView: View {
 }
 
 private struct InfiniteScrollProgressView: View {
-    let store: StoreOf<MainFeature>
+    private let store: StoreOf<MainFeature>
     @ObservedObject private var viewStore: ViewStoreOf<MainFeature>
     
-    init(store: StoreOf<MainFeature>) {
+    fileprivate init(store: StoreOf<MainFeature>, viewStore: ViewStoreOf<MainFeature>) {
         self.store = store
-        self.viewStore = ViewStore(store, observe: { $0 })
+        self.viewStore = viewStore
     }
     
-    var body: some View {
+    fileprivate var body: some View {
         ProgressView()
             .frame(height: 64)
             .onAppear {
