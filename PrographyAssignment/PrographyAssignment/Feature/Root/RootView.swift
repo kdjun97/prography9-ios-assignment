@@ -20,8 +20,8 @@ struct RootView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            RootContentView(store: store)
-            PTabBar(store: store)
+            RootContentView(store: store, viewStore: viewStore)
+            PTabBar(store: store, viewStore: viewStore)
         }
     }
 }
@@ -30,9 +30,9 @@ private struct RootContentView: View {
     private let store: StoreOf<RootFeature>
     @ObservedObject private var viewStore: ViewStoreOf<RootFeature>
     
-    fileprivate init(store: StoreOf<RootFeature>) {
+    fileprivate init(store: StoreOf<RootFeature>, viewStore: ViewStoreOf<RootFeature>) {
         self.store = store
-        self.viewStore = ViewStore(store, observe: { $0 })
+        self.viewStore = viewStore
     }
     
     fileprivate var body: some View {
@@ -51,9 +51,9 @@ private struct PTabBar: View {
     private let store: StoreOf<RootFeature>
     @ObservedObject private var viewStore: ViewStoreOf<RootFeature>
     
-    init(store: StoreOf<RootFeature>) {
+    fileprivate init(store: StoreOf<RootFeature>, viewStore: ViewStoreOf<RootFeature>) {
         self.store = store
-        self.viewStore = ViewStore(store, observe: { $0 })
+        self.viewStore = viewStore
     }
     
     private let tabItems: [TabItemList] = [.house, .cards]

@@ -24,7 +24,7 @@ struct RandomPhotoView: View {
             Divider()
                 .background(.gray30)
             Spacer()
-            RandomPhotoCardView(store: store)
+            RandomPhotoCardView(store: store, viewStore: viewStore)
         }
         .onAppear {
             viewStore.send(.onAppear)
@@ -33,20 +33,20 @@ struct RandomPhotoView: View {
 }
 
 private struct RandomPhotoCardView: View {
-    let store: StoreOf<RandomPhotoFeature>
-    let viewStore: ViewStoreOf<RandomPhotoFeature>
-    let rows = [GridItem(.flexible(), spacing: 0, alignment: nil)]
+    private let store: StoreOf<RandomPhotoFeature>
+    private let viewStore: ViewStoreOf<RandomPhotoFeature>
+    private let rows = [GridItem(.flexible(), spacing: 0, alignment: nil)]
     
-    init(store: StoreOf<RandomPhotoFeature>) {
+    fileprivate init(store: StoreOf<RandomPhotoFeature>, viewStore: ViewStoreOf<RandomPhotoFeature>) {
         self.store = store
-        self.viewStore = ViewStore(store, observe: { $0 })
+        self.viewStore = viewStore
     }
     
     fileprivate var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHGrid(rows: rows, spacing: 0) {
                 ForEach(viewStore.photos, id: \.self) { item in
-                    RandomPhotoCard(store: store, photo: item)
+                    RandomPhotoCard(store: store, photo: item, viewStore: viewStore)
                     .frame(maxHeight: .infinity)
                     .cornerRadius(10)
                     .clipped()
