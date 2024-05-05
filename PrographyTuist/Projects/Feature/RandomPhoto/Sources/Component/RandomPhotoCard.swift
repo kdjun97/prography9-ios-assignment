@@ -12,20 +12,18 @@ import ComposableArchitecture
 import Domain
 
 struct RandomPhotoCard: View {
-    let store: StoreOf<RandomPhotoFeature>
     let viewStore: ViewStoreOf<RandomPhotoFeature>
     let photo: PhotosModel
     
-    init(store: StoreOf<RandomPhotoFeature>, photo: PhotosModel) {
-        self.store = store
-        self.viewStore = ViewStore(store, observe: { $0 })
+    init(viewStore: ViewStoreOf<RandomPhotoFeature>, photo: PhotosModel) {
+        self.viewStore = viewStore
         self.photo = photo
     }
     
     var body: some View {
         VStack(spacing: 0) {
             PhotoView(photo: photo)
-            PhotoHorizontalButton(store: store, photo: photo)
+            PhotoHorizontalButton(viewStore: viewStore, photo: photo)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(DesignSystemAsset.white.swiftUIColor)
@@ -71,13 +69,11 @@ private struct PhotoView: View {
 }
 
 private struct PhotoHorizontalButton: View {
-    let store: StoreOf<RandomPhotoFeature>
     let viewStore: ViewStoreOf<RandomPhotoFeature>
     let photo: PhotosModel
     
-    init(store: StoreOf<RandomPhotoFeature>, photo: PhotosModel) {
-        self.store = store
-        self.viewStore = ViewStore(store, observe: { $0 })
+    init(viewStore: ViewStoreOf<RandomPhotoFeature>, photo: PhotosModel) {
+        self.viewStore = viewStore
         self.photo = photo
     }
     

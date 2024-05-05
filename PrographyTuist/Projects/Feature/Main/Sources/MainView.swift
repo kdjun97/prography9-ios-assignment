@@ -27,14 +27,14 @@ public struct MainView: View {
             ScrollView {
                 LazyVStack(spacing: 0) {
                     if (!viewStore.bookmarks.isEmpty) {
-                        BookMarkView(store: store)
+                        BookMarkView(viewStore: viewStore)
                             .padding(.top, 20)
                     }
                     Spacer()
                         .frame(height: !viewStore.bookmarks.isEmpty ? 12 : 20)
-                    RecentlyImageView(store: store)
+                    RecentlyImageView(viewStore: viewStore)
                     if (!viewStore.isLastPage) {
-                        InfiniteScrollProgressView(store: store)
+                        InfiniteScrollProgressView(viewStore: viewStore)
                     }
                 }
             }
@@ -46,13 +46,11 @@ public struct MainView: View {
 }
 
 private struct BookMarkView: View {
-    let store: StoreOf<MainFeature>
     @ObservedObject private var viewStore: ViewStoreOf<MainFeature>
     let rows = [GridItem(.flexible(), spacing: 0, alignment: nil)]
     
-    init(store: StoreOf<MainFeature>) {
-        self.store = store
-        self.viewStore = ViewStore(store, observe: { $0 })
+    init(viewStore: ViewStoreOf<MainFeature>) {
+        self.viewStore = viewStore
     }
     
     var body: some View {
@@ -84,13 +82,11 @@ private struct BookMarkView: View {
 }
 
 private struct RecentlyImageView: View {
-    let store: StoreOf<MainFeature>
     @ObservedObject private var viewStore: ViewStoreOf<MainFeature>
     let columns = Array(repeating: GridItem(.flexible(), spacing: 0), count: 1)
     
-    init(store: StoreOf<MainFeature>) {
-        self.store = store
-        self.viewStore = ViewStore(store, observe: { $0 })
+    init(viewStore: ViewStoreOf<MainFeature>) {
+        self.viewStore = viewStore
     }
     
     var body: some View {
@@ -145,12 +141,10 @@ private struct RecentlyImageView: View {
 }
 
 private struct InfiniteScrollProgressView: View {
-    let store: StoreOf<MainFeature>
     @ObservedObject private var viewStore: ViewStoreOf<MainFeature>
     
-    init(store: StoreOf<MainFeature>) {
-        self.store = store
-        self.viewStore = ViewStore(store, observe: { $0 })
+    init(viewStore: ViewStoreOf<MainFeature>) {
+        self.viewStore = viewStore
     }
     
     var body: some View {
