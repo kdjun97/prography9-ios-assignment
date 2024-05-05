@@ -28,8 +28,8 @@ public struct DetailView: View {
                 buttonAction: { viewStore.send(.backButtonTapped) },
                 bookmarkButtonAction: { viewStore.send(.bookmarkButtonTapped) }
             )
-            DetailPhotoView(store: store)
-            PhotoDescriptionView(store: store)
+            DetailPhotoView(viewStore: viewStore)
+            PhotoDescriptionView(viewStore: viewStore)
         }
         .opaqueBackground()
         .onAppear {
@@ -39,12 +39,10 @@ public struct DetailView: View {
 }
 
 private struct DetailPhotoView: View {
-    let store: StoreOf<DetailFeature>
     let viewStore: ViewStoreOf<DetailFeature>
     
-    init(store: StoreOf<DetailFeature>) {
-        self.store = store
-        self.viewStore = ViewStore(self.store, observe: { $0 })
+    init(viewStore: ViewStoreOf<DetailFeature>) {
+        self.viewStore = viewStore
     }
     
     fileprivate var body: some View {
@@ -69,12 +67,10 @@ private struct DetailPhotoView: View {
 }
 
 private struct PhotoDescriptionView: View {
-    let store: StoreOf<DetailFeature>
     let viewStore: ViewStoreOf<DetailFeature>
     
-    init(store: StoreOf<DetailFeature>) {
-        self.store = store
-        self.viewStore = ViewStore(self.store, observe: { $0 })
+    init(viewStore: ViewStoreOf<DetailFeature>) {
+        self.viewStore = viewStore
     }
     
     fileprivate var body: some View {
